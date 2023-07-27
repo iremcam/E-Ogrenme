@@ -1,0 +1,30 @@
+﻿@model List<Kategori>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Soru";
+    Layout= "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kategori Adı</th>                     
+                    <th>Sorular</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.KategoriAdi</th>    
+                        <td><a href="/Soru/Index/@item.Id">Sorular</a></td>                
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>

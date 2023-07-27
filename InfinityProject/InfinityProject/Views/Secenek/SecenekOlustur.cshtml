@@ -1,0 +1,26 @@
+﻿@model SecenekOlusturDTO
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sınav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <form asp-controller="Secenek" asp-action="SecenekOlustur" method="post">
+            <input type="hidden" name="SoruId" value="@Model.SoruId" id="SoruId" />
+            <div class="form-group">
+                <label for="SecenekAciklamasi">SecenekAciklamasi</label>
+                <input type="text" class="form-control" id="SecenekAciklamasi" name="SecenekAciklamasi">
+            </div>
+            
+            <div class="form-group">
+                <input type="checkbox" name="DogruSecenek" id="DogruSecenek" onchange="this.value=this.checked" value="true" checked> Doğru Şık <br>
+            </div>
+
+            <button type="submit" name="SecenekOlustur" class="btn btn-primary">Kaydet</button>
+        </form>
+
+    </div>
+</body>

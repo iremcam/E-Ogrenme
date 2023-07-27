@@ -1,0 +1,84 @@
+﻿@model CozumDTO
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model != null)
+{
+    <input type="hidden" name="name" id="bitisTarihi" value="@Model.SinavBitisTarihi" />
+    <div class="card">
+        <div class="card-body">
+            Kalan süreniz <p id="kalanSure"></p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Soru
+        </div>
+        <div class="card-body">
+            <p class="card-text">@Model.Soru.Icerik</p>
+            <br />
+            <div class="form-check">
+                <form asp-controller="Cozum" asp-action="CozumKaydet" method="post">
+
+                    <input type="hidden" name="SoruId" value="@Model.Soru.Id" />
+                    <input type="hidden" name="SinavId" value="@Model.SinavId" />
+                    <input type="hidden" name="KullaniciSinavId" value="@Model.KullaniciSinavId" />
+                    @if (Model.Soru.SoruTipi.SoruTipiAdi == "Çoktan Seçmeli")
+                    {
+
+                        @foreach (var item in @Model.Secenek)
+                        {
+                            <input class="form-check-input" type="radio" name="SecenekId" id="secenek-@item.Id" value="@item.Id" checked>
+                            <label class="form-check-label" for="secenek-@item.Id">
+                                @item.SecenekAciklamasi
+                            </label>
+                            <br />
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <label for="SecenekAciklama">Cevabınız</label>
+                            <textarea class="form-control" id="SecenekAciklama" name="SecenekAciklama" rows="3"></textarea>
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            Sınavınız Bitmiştir
+        </div>
+    </div>
+}
+@section Scripts{
+    <script>
+        function millisToMinutesAndSeconds(millis) {
+            var minutes = Math.floor(millis / 60000);
+            var seconds = ((millis % 60000) / 1000).toFixed(0);
+            return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        }
+        var bitis = $("#bitisTarihi").val();
+        var year = bitis.split(" ")[0].split(".")[2];
+        var month = bitis.split(" ")[0].split(".")[1];
+        var day = bitis.split(" ")[0].split(".")[0];
+        var hour = bitis.split(" ")[1].split(":")[0];
+        var minute = bitis.split(" ")[1].split(":")[1];
+        var second = bitis.split(" ")[1].split(":")[2];
+        var date = new Date(year, parseInt(month) - 1, day, hour, minute, second);
+
+        setInterval(function () {
+            var diff = Math.abs(date - new Date());
+            var sonuc = millisToMinutesAndSeconds(diff);
+            $("#kalanSure").text(sonuc);
+        }, 1000);
+
+    </script>
+
+}

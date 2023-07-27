@@ -1,0 +1,39 @@
+﻿@model List<Sinav>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sınav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <a class="btn btn-primary" href="/Sinav/SinavOlustur">Sınav ekle</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Adı</th>
+                    <th>Süresi</th>
+                    <th>Başarı Puanı</th>
+                    <th>Sorular</th>
+                    <th>Soru Ekle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.SinavAdi</th>
+                        <td>@item.SinavSuresi</td>
+                        <td>@item.BasariPuani</td>
+                        <td><a href="/Soru/Index/@item.Id">Sorular</a></td>
+                        <td><a href="/Soru/SoruOlustur/@item.Id">Soru Ekle</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>

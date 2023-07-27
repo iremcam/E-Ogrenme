@@ -1,0 +1,49 @@
+﻿@model KullaniciAtaDTO
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sinav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <form asp-controller="SinavKullanici" asp-action="KullaniciAta" method="post">
+
+
+            <div class="form-group">
+                <label for="KullaniciId">Kullanici</label>
+                <select class="form-control" name="KullaniciId" id="KullaniciId">
+                    @foreach (var item in Model.Kullanicis)
+                    {
+                        <option value="@item.Id">@item.KullaniciAdi</option>
+                    }
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="SinavId">SinavAdi</label>
+                <select class="form-control" name="SinavId" id="SinavId">
+                    @foreach (var item in Model.Sinavs)
+                    {
+                        <option value="@item.Id">@item.SinavAdi</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="BaslangicTarihi">Baslangic Tarihi</label>
+                <input type="datetime" class="form-control" id="BaslangicTarihi" name="BaslangicTarihi" placeholder="Gün.Ay.Yıl 00:00:00">
+
+            </div>
+            <div class="form-group">
+                <label for="BitisTarihi">Bitiş Tarihi</label>
+                <input type="datetime" class="form-control" id="BitisTarihi" name="BitisTarihi" placeholder="Gün.Ay.Yıl 00:00:00">
+
+            </div>
+
+            <button type="submit" name="SınavOlustur" class="btn btn-primary">Eşleştir</button>
+        </form>
+
+    </div>
+</body>

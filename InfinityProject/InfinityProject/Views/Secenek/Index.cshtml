@@ -1,0 +1,42 @@
+﻿@model List<Secenek>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sınav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="row">
+        <a class="btn btn-primary" href="/Secenek/SecenekOlustur/@ViewBag.SoruId">Şık ekle</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Şık İçeriği</th>
+                    <th>Doğru/Yanlış</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.SecenekAciklamasi</td>
+                    @if (item.DogruSecenek)
+                    {
+                        <td>Doğru</td>
+                    }
+                    else
+                    {
+                        <td>Yanlış</td>
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>

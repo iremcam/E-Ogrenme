@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sınav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <form asp-controller="Sinav" asp-action="SinavOlustur" method="post">
+            <div class="form-group">
+                <label for="SinavAdi">Sinav Adi</label>
+                <input type="text" class="form-control" id="SinavAdi" name="SinavAdi" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="BasariPuani">Başarı Puanı</label>
+                <input type="number" class="form-control" name="BasariPuani" id="BasariPuani">
+            </div>
+            <div class="form-group">
+                <label for="SinavSuresi">Sınav Süresi</label>
+                <input type="number" class="form-control" name="SinavSuresi" id="SinavSuresi">
+            </div>
+            <button type="submit" name="SınavOlustur" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</body>

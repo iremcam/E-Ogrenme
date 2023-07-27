@@ -1,0 +1,40 @@
+﻿  @model SoruOlusturDTO
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Sınav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="row">
+        <form asp-controller="Soru" asp-action="SoruOlustur" method="post">
+            <input type="hidden" name="SinavId" value="@Model.SinavId" />
+            <div class="form-group">
+                <label for="Icerik">Soru</label>
+                <input type="text" class="form-control" id="Icerik" name="Icerik">
+            </div>
+            <div class="form-group">
+                <label for="KategoriId">Kategori</label>
+                <select class="form-control" name="KategoriId" id="KategoriId">
+                    @foreach (var item in Model.KategoriList)
+                    {
+                        <option value="@item.Id">@item.KategoriAdi</option>
+                    }
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="SoruTipiId">Soru Tipi</label>
+                <select class="form-control" name="SoruTipiId" id="SoruTipiId">
+                    @foreach (var item in Model.SoruTipiList)
+                    {
+                        <option value="@item.Id">@item.SoruTipiAdi</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" name="SınavOlustur" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</body>

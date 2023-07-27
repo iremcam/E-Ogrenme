@@ -1,0 +1,33 @@
+﻿@model List<SinavKullaniciDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+    <div class="card col-md-3">
+        <div class="card-body">
+            <div class="card-title">@item.Sinav.SinavAdi</div>
+            <div class="card-text">@item.Sinav.SinavSuresi dk</div>
+            @if (item.KullaniciBitirmeTarihi != null)
+            {
+                <b>Sınav Yapılmıştır</b>
+                <br />
+                <b>@item.Puan</b>
+                <br />
+                @if (item.Gecti)
+                {
+                    <b>Geçti</b>
+                }
+                else
+                {
+                    <b>Kaldı</b>
+                }
+            }
+            else
+            {
+                <a class="btn btn-primary" href="/Cozum/Index/@item.SinavKullaniciId">Başla</a>
+            }
+        </div>
+    </div>
+}

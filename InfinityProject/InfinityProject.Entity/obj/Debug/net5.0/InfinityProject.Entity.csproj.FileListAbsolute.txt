@@ -1,0 +1,15 @@
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\InfinityProject.Entity.deps.json
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\InfinityProject.Entity.runtimeconfig.json
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\InfinityProject.Entity.runtimeconfig.dev.json
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\InfinityProject.Entity.dll
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\ref\InfinityProject.Entity.dll
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\bin\Debug\net5.0\InfinityProject.Entity.pdb
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.dll
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\ref\InfinityProject.Entity.dll
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.pdb
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.genruntimeconfig.cache
+C:\Users\Lenovo\source\repos\InfinityProject\InfinityProject.Entity\obj\Debug\net5.0\InfinityProject.Entity.csproj.AssemblyReference.cache
